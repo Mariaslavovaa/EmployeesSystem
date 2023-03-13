@@ -1,0 +1,40 @@
+<mat-card>
+    <mat-card-title>Register</mat-card-title>
+    <mat-card-content>
+        <form #loginForm="ngForm" novalidate>
+        <p>
+            <mat-form-field>
+            <input type="text" matInput placeholder="Enter username" formControlName="username" #username>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+            <input type="password" matInput placeholder="Enter password" formControlName="password" #password>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+            <input type="fullName" matInput placeholder="Enter full name" formControlName="fullName" #fullName>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+            <input type="phoneNumber" matInput placeholder="Enter phone number" formControlName="phoneNumber" #phoneNumber>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+            <input type="email" matInput placeholder="Enter email" formControlName="email" #email>
+            </mat-form-field>
+        </p>
+
+
+        <div class="button">
+            <button type="submit" mat-raised-button (click)="register(username.value, password.value, fullName.value, 
+                        phoneNumber.value, email.value)">Register</button>
+        </div>
+
+        <p class="already">Already have a profile? <a routerLink="/login">Login here</a></p>
+        </form>
+    </mat-card-content>
+</mat-card>

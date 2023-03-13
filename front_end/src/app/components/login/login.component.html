@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+        <form #loginForm="ngForm" novalidate>
+        <p>
+            <mat-form-field>
+            <input type="text" matInput placeholder="Username" formControlName="username" #username>
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-form-field>
+            <input type="password" matInput placeholder="Password" formControlName="password" #password>
+            </mat-form-field>
+        </p>
+
+
+        <div class="button">
+            <button type="submit" mat-raised-button (click)="login(username.value, password.value)">Login</button>
+        </div>
+
+        <p class="already">You don't have a profile? <a routerLink="/register">Register here</a></p>
+        </form>
+    </mat-card-content>
+</mat-card>
+
