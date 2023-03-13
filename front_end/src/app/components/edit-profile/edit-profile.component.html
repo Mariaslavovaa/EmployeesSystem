@@ -1,0 +1,47 @@
+<mat-card style="background-color: rgb(215, 208, 229)">
+  <mat-card-title>Edit profile:</mat-card-title>
+  <mat-card-content>
+    <form #editProfileForm="ngForm" novalidate>
+        <p>
+          <mat-form-field appearance="fill" >
+            <mat-label>Username</mat-label>
+            <input matInput [defaultValue]="viewEmployee?.username" placeholder="Username*" #username />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput [defaultValue]="viewEmployee?.password" placeholder="Password*" #password />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Full name</mat-label>
+            <input matInput  [defaultValue]="viewEmployee?.fullName" placeholder="Full name*" #fullName />
+          </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="fill">
+              <mat-label>Phone number</mat-label>
+              <input matInput [defaultValue]="viewEmployee?.phoneNumber" placeholder="Phone number*" #phoneNumber />
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="fill">
+              <mat-label>Email</mat-label>
+              <input matInput [defaultValue]="viewEmployee?.email" placeholder="Email*" #email />
+            </mat-form-field>
+        </p>
+
+        <div class="button">
+            <button mat-fab color="primary" (click)="editProfile(username.value, password.value, fullName.value, 
+                        phoneNumber.value, email.value)">
+                        <mat-icon>edit</mat-icon>
+            </button>
+        </div>
+        <button mat-fab color="warn" aria-label="Delete profile" (click)="deleteProfile(phoneNumber.value)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </form>
+</mat-card-content>
+</mat-card>

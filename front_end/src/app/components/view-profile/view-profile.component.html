@@ -1,0 +1,51 @@
+  <div>
+    <mat-card>
+      <mat-card-title>
+         Hello, {{ viewEmployee?.fullName }}
+      </mat-card-title>
+      <mat-card-content>
+        <strong>Username: </strong>  {{ viewEmployee?.username }}
+      </mat-card-content>
+
+      <mat-card-content>
+        <strong>Email: </strong>  {{ viewEmployee?.email }}
+      </mat-card-content>
+
+      <mat-card-content>
+        <strong>Phone: </strong>  {{ viewEmployee?.phoneNumber }}
+      </mat-card-content>
+
+      <button mat-fab color="primary" [routerLink]="['/edit-profile', viewEmployee?.phoneNumber]">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-fab color="warn" aria-label="Delete profile" (click)="deleteProfile(viewEmployee?.phoneNumber)">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+      <button mat-fab color="accent" [routerLink]="['/create-task', viewEmployee?.phoneNumber]">
+        <mat-icon>assignment turned in</mat-icon>
+      </button>
+      
+    </mat-card>
+
+
+    <!-- <table mat-table class="mat-elevation-z8">
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>Title</th>
+        <td mat-cell *matCellDef="let task">{{ task.title }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Description</th>
+        <td mat-cell *matCellDef="let task">{{ task.description }}</td>
+      </ng-container>
+    
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        mat-row
+        *matRowDef="let task; columns: displayedColumns"
+      ></tr>
+    </table> -->
+  </div>
